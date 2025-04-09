@@ -29,4 +29,10 @@
     <string name="search_here">Cercar aquest títol:</string>
     <string name="new_account_fields">Si us plau, ompliu tots els campes per a continuar.</string>
     <string name="search_button">Cerca</string>
+    <string name="navigation_drawer_open">Obrir navegador</string>
+    <string name="navigation_drawer_close">Tencar navegador</string>
+    <string name="nav_header_desc">Navegador</string>
+    <string name="action_settings">Opciones</string>
+    <string name="menu_gallery">Galeria</string>
+    <string name="menu_slideshow">Slideshow</string>
 </resources>

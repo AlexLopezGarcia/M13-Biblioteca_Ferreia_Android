@@ -15,35 +15,18 @@
         android:name="com.m13ferreria.biblioteca.guiconcept1.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
-    <fragment
-        android:id="@+id/categoriesFragment"
-        android:name="com.m13ferreria.biblioteca.guiconcept1.CategoriesFragment"
-        android:label="fragment_categories"
-        tools:layout="@layout/fragment_categories" />
-    <fragment
-        android:id="@+id/genresFragment"
-        android:name="com.m13ferreria.biblioteca.guiconcept1.GenresFragment"
-        android:label="fragment_genres"
-        tools:layout="@layout/fragment_genres" />
+
     <fragment
         android:id="@+id/lentFragment"
         android:name="com.m13ferreria.biblioteca.guiconcept1.LentFragment"
         android:label="fragment_lent"
         tools:layout="@layout/fragment_lent" />
-    <fragment
-        android:id="@+id/userHistoryFragment"
-        android:name="com.m13ferreria.biblioteca.guiconcept1.UserHistoryFragment"
-        android:label="fragment_user_history"
-        tools:layout="@layout/fragment_user_history" />
+
     <fragment
         android:id="@+id/userConfigFragment"
         android:name="com.m13ferreria.biblioteca.guiconcept1.UserConfigFragment"
         android:label="fragment_user_config"
         tools:layout="@layout/fragment_user_config" />
-    <fragment
-        android:id="@+id/favoritesFragment"
-        android:name="com.m13ferreria.biblioteca.guiconcept1.FavoritesFragment"
-        android:label="fragment_favorites"
-        tools:layout="@layout/fragment_favorites" />
+
 
 </navigation>

@@ -89,12 +89,8 @@ public class MainUserActivity extends AppCompatActivity implements NavigationVie
                 transaction.commit();
                 drawer.closeDrawer(GravityCompat.START);
                 return true;
-            case R.id.nav_favorites:
-                FavoritesFragment favoritesFragment = new FavoritesFragment();
-                transaction.replace(R.id.nav_host_fragment_content_main_user, favoritesFragment);
-                transaction.commit();
-                drawer.closeDrawer(GravityCompat.START);
-                return true;
+
+
             case R.id.nav_lent:
                 LentFragment lentFragment = new LentFragment();
                 transaction.replace(R.id.nav_host_fragment_content_main_user, lentFragment);
@@ -102,18 +98,9 @@ public class MainUserActivity extends AppCompatActivity implements NavigationVie
                 drawer.closeDrawer(GravityCompat.START);
                 return true;
 
-            case R.id.nav_genres:
-                GenresFragment genresFragment = new GenresFragment();
-                transaction.replace(R.id.nav_host_fragment_content_main_user, genresFragment);
-                transaction.commit();
-                drawer.closeDrawer(GravityCompat.START);
-                return true;
-            case R.id.nav_history:
-                UserHistoryFragment userHistoryFragment = new UserHistoryFragment();
-                transaction.replace(R.id.nav_host_fragment_content_main_user, userHistoryFragment);
-                transaction.commit();
-                drawer.closeDrawer(GravityCompat.START);
-                return true;
+
+
+
             case R.id.nav_settings:
                 UserConfigFragment userConfigFragment = new UserConfigFragment();
                 transaction.replace(R.id.nav_host_fragment_content_main_user, userConfigFragment);
