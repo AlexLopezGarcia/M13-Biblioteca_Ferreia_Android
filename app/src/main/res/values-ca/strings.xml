@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Biblioteca</string>
+    <string name="not_implemented">Encara no implementat.</string>
+    <string name="menu_home">Inici</string>
+    <string name="menu_search">Cerca</string>
+    <string name="menu_favorites">Preferits</string>
+    <string name="menu_lent">Els més prestats</string>
+    <string name="menu_categories">Categories</string>
+    <string name="menu_genres">Gèneres</string>
+    <string name="menu_history">El vostre historial</string>
+    <string name="menu_settings">Configuració</string>
+    <string name="menu_logout">Tanca la sessió</string>
+    <string name="username">Nom d\'usuari</string>
+    <string name="password">Contrassenya</string>
+    <string name="login_button">Inicia sessió</string>
+    <string name="new_account_button_text">Crea un nou compte</string>
+    <string name="forgot_password"><u>Heu oblidat la vostra contrassenya?</u></string>
+    <string name="forgot_passwd_info">Contacteu amb un administrador per resetejar la vostra contrassenya.</string>
+    <string name="alert_password_reset">La contressenya del vostre compte s\'ha resetejat. Necessitareu introduïr una nova contrassenya per continuar.</string>
+    <string name="new_account">Nou compte</string>
+    <string name="ask_id">El vostre DNI/NIE</string>
+    <string name="ask_name">Quin és el vostre nom complet?</string>
+    <string name="email_address">Adreça de correu electrònic</string>
+    <string name="new_password">Nova contrassenya</string>
+    <string name="repeat_password">Repetiu la contrassenya</string>
+    <string name="new_account_invalid_email">L\'adreça de correu electrònic introduida no és vàlida.</string>
+    <string name="password_not_match">Les contrassenyes no coincideixen.</string>
+    <string name="search_here">Cercar aquest títol:</string>
+    <string name="new_account_fields">Si us plau, ompliu tots els campes per a continuar.</string>
+    <string name="search_button">Cerca</string>
+    <string name="navigation_drawer_open">Obrir navegador</string>
+    <string name="navigation_drawer_close">Tencar navegador</string>
+    <string name="nav_header_desc">Navegador</string>
+    <string name="action_settings">Opciones</string>
+    <string name="menu_gallery">Galeria</string>
+    <string name="menu_slideshow">Slideshow</string>
+</resources>

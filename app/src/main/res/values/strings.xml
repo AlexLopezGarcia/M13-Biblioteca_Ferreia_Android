@@ -1,3 +1,51 @@
 <resources>
-    <string name="app_name">M13-Biblioteca_Ferreia_Android</string>
+    <string name="app_name">Biblioteca</string>
+    <string name="version" translatable="false">UI</string>
+    <string name="not_implemented">Not implemented yet.</string>
+
+    <string name="menu_home">Inicio</string>
+    <string name="menu_search">Buscar</string>
+    <string name="menu_favorites">Favoritos</string>
+    <string name="menu_lent">Los más prestados</string>
+    <string name="menu_categories">Categories</string>
+    <string name="menu_genres">Genres</string>
+    <string name="menu_history">Your history</string>
+    <string name="menu_settings">Configuración</string>
+    <string name="menu_logout">Cerrar sesión</string>
+
+    <string name="username">Nombre de usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="login_button">Iniciar sesión</string>
+    <string name="new_account_button_text">Crear una nueva cuenta</string>
+    <string name="forgot_password"><u>¿Ha olvidado su contraseña?</u></string>
+    <string name="forgot_passwd_info">Contacte con un administrador para resetear su contraseña.</string>
+
+    <string name="alert_password_reset">La contraseña de su cuenta de usuario se ha reseteado. Deberá introducir una nueva contraseña para continuar.</string>
+
+    <string name="new_account">Nueva cuenta</string>
+    <string name="ask_id">Su DNI/NIE</string>
+    <string name="ask_name">¿Cuál es su nombre completo?</string>
+    <string name="email_address">Dirección de correo electrónico</string>
+    <string name="new_password">Nueva contraseña</string>
+    <string name="repeat_password">Repita la contraseña</string>
+    <string name="new_account_fields">Por favor, rellene todos los campos para continuar.</string>
+    <string name="new_account_invalid_email">La dirección de correo electrónico introducida no es válida.</string>
+    <string name="password_not_match">Las contraseñas no coinciden.</string>
+
+    <string name="search_here">Buscar el siguiente título:</string>
+    <string name="search_button">Buscar</string>
+
+    <!-- Placeholders -->
+    <string name="placeholder_username" translatable="false">User Name</string>
+    <string name="placeholder_mail" translatable="false">a23uname@inslaferreria.cat</string>
+
+    <string name="title_activity_main_user" translatable="false">MainUserActivity</string>
+    <string name="navigation_drawer_open">Abrir navegador</string>
+    <string name="navigation_drawer_close">Cerrar navegador</string>
+    <string name="nav_header_desc">Navegador</string>
+    <string name="action_settings">Opciones</string>
+    <string name="menu_gallery">Galeria</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Todavía sin implementar.</string>
 </resources>
