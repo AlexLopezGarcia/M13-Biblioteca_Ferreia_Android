@@ -91,13 +91,6 @@ public class MainUserActivity extends AppCompatActivity implements NavigationVie
                 return true;
 
 
-            case R.id.nav_lent:
-                LentFragment lentFragment = new LentFragment();
-                transaction.replace(R.id.nav_host_fragment_content_main_user, lentFragment);
-                transaction.commit();
-                drawer.closeDrawer(GravityCompat.START);
-                return true;
-
 
 
 
