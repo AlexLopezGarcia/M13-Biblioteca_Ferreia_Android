@@ -4,13 +4,21 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
 import com.m8_uf1.m13_biblioteca_ferreia_android.R;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,25 +33,46 @@ public class LibrosFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.fragment_libros, container, false);
 
-        // Configuramos el RecyclerView
         recyclerView = vista.findViewById(R.id.recycler_libros);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
         adapter = new LibrosAdapter(listaLibros);
         recyclerView.setAdapter(adapter);
 
-        // Llenamos la lista de prueba
-        cargarLibrosDePrueba();
+        cargarLibrosDesdeAPI();
 
         return vista;
     }
 
-    private void cargarLibrosDePrueba() {
-        listaLibros.add(new Libro("Don Quijote", "Miguel de Cervantes", "Novela clásica"));
-        listaLibros.add(new Libro("Cien Años de Soledad", "Gabriel García Márquez", "Realismo mágico"));
-        listaLibros.add(new Libro("El Hobbit", "J.R.R. Tolkien", "Fantasía"));
-        listaLibros.add(new Libro("1984", "George Orwell", "Distopía"));
-        listaLibros.add(new Libro("La Sombra del Viento", "Carlos Ruiz Zafón", "Misterio"));
-        adapter.notifyDataSetChanged();
+    private void cargarLibrosDesdeAPI() {
+        String url = "http://192.168.17.223:9090/public/libros";
+        // tu IP y puerto reales
+
+        RequestQueue queue = Volley.newRequestQueue(requireContext());
+
+        JsonArrayRequest peticion = new JsonArrayRequest(
+                Request.Method.GET, url, null,
+                response -> {
+                    listaLibros.clear();
+                    for (int i = 0; i < response.length(); i++) {
+                        try {
+                            JSONObject libroJson = response.getJSONObject(i);
+                            String titulo = libroJson.getString("titulo");
+                            String autor = libroJson.getString("autor");
+                            String categoria = libroJson.getString("categoria");
+
+                            listaLibros.add(new Libro(titulo, autor, categoria));
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    adapter.notifyDataSetChanged();
+                },
+                error -> {
+                    error.printStackTrace();
+                    Toast.makeText(getContext(), "No se pudo conectar con el servidor", Toast.LENGTH_SHORT).show();
+                }
+        );
+
+        queue.add(peticion);
     }
 }
