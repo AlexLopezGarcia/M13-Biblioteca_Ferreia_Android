@@ -30,4 +30,11 @@
         android:layout_marginTop="2dp"
         android:textColor="#666666" />
 
+    <TextView
+        android:id="@+id/texto_estado_uso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Estado de uso"
+        android:layout_marginTop="2dp"
+        android:textColor="#008000" /> <!-- Verde -->
 </LinearLayout>

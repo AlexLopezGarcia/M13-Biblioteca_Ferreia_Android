@@ -45,7 +45,6 @@ public class LibrosFragment extends Fragment {
 
     private void cargarLibrosDesdeAPI() {
         String url = "http://192.168.17.223:9090/public/libros";
-        // tu IP y puerto reales
 
         RequestQueue queue = Volley.newRequestQueue(requireContext());
 
@@ -59,8 +58,9 @@ public class LibrosFragment extends Fragment {
                             String titulo = libroJson.getString("titulo");
                             String autor = libroJson.getString("autor");
                             String categoria = libroJson.getString("categoria");
+                            boolean estadoUso = libroJson.getBoolean("estadoUso"); // 🔥 nuevo
 
-                            listaLibros.add(new Libro(titulo, autor, categoria));
+                            listaLibros.add(new Libro(titulo, autor, categoria, estadoUso));
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -75,4 +75,5 @@ public class LibrosFragment extends Fragment {
 
         queue.add(peticion);
     }
+
 }
