@@ -1,27 +1,20 @@
 package com.m8_uf1.m13_biblioteca_ferreia_android.ui.libros;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
+import android.view.*;
+import android.widget.*;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.*;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.Volley;
+import com.android.volley.*;
+import com.android.volley.toolbox.*;
 import com.m8_uf1.m13_biblioteca_ferreia_android.R;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+import org.json.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class LibrosFragment extends Fragment {
 
