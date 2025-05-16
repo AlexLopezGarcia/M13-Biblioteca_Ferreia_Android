@@ -58,7 +58,7 @@ public class LibrosFragment extends Fragment {
                             String titulo = libroJson.getString("titulo");
                             String autor = libroJson.getString("autor");
                             String categoria = libroJson.getString("categoria");
-                            boolean estadoUso = libroJson.getBoolean("estadoUso"); // 🔥 nuevo
+                            boolean estadoUso = libroJson.getBoolean("estadoUso"); 
 
                             listaLibros.add(new Libro(titulo, autor, categoria, estadoUso));
                         } catch (Exception e) {
