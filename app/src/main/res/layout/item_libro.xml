@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_item_libro"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <TextView
+        android:id="@+id/texto_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Título del libro"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/texto_autor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Autor"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/texto_categoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Categoría"
+        android:layout_marginTop="2dp"
+        android:textColor="#666666" />
+
+    <TextView
+        android:id="@+id/texto_estado_uso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Estado de uso"
+        android:layout_marginTop="2dp"
+        android:textColor="#008000" /> <!-- Verde -->
+</LinearLayout>
