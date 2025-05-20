@@ -4,7 +4,7 @@ public class Libro {
     private final String titulo;
     private final String autor;
     private final String categoria;
-    private final boolean estadoUso; // 🔥 añadido
+    private final boolean estadoUso;
 
     public Libro(String titulo, String autor, String categoria, boolean estadoUso) {
         this.titulo = titulo;
@@ -25,7 +25,7 @@ public class Libro {
         return categoria;
     }
 
-    public boolean isEstadoUso() { // 🔥 añadido
+    public boolean isEstadoUso() {
         return estadoUso;
     }
 }
