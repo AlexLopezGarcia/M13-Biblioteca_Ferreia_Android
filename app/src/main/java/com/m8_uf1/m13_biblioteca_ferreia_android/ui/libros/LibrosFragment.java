@@ -23,11 +23,18 @@ public class LibrosFragment extends Fragment {
     private final List<Libro> listaLibros = new ArrayList<>();
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.fragment_libros, container, false);
 
         recyclerView = vista.findViewById(R.id.recycler_libros);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
         adapter = new LibrosAdapter(listaLibros);
         recyclerView.setAdapter(adapter);
 
@@ -36,8 +43,31 @@ public class LibrosFragment extends Fragment {
         return vista;
     }
 
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.inicio) {
+            Toast.makeText(getContext(), "Inicio seleccionado", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (item.getItemId() == R.id.perfil) {
+            Toast.makeText(getContext(), "Perfil seleccionado", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (item.getItemId() == R.id.historial) {
+            Toast.makeText(getContext(), "Historial seleccionado", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (item.getItemId() == R.id.ajustes) {
+            Toast.makeText(getContext(), "Ajustes seleccionado", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (item.getItemId() == R.id.cerrar_sesion) {
+            Toast.makeText(getContext(), "Cerrar sesión seleccionado", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
     private void cargarLibrosDesdeAPI() {
-        String url = "http://192.168.17.223:9090/public/libros";
+        String url = "http://192.168.18.44:9090/public/libros";
 
         RequestQueue queue = Volley.newRequestQueue(requireContext());
 
@@ -51,7 +81,7 @@ public class LibrosFragment extends Fragment {
                             String titulo = libroJson.getString("titulo");
                             String autor = libroJson.getString("autor");
                             String categoria = libroJson.getString("categoria");
-                            boolean estadoUso = libroJson.getBoolean("estadoUso"); 
+                            boolean estadoUso = libroJson.getBoolean("estadoUso");
 
                             listaLibros.add(new Libro(titulo, autor, categoria, estadoUso));
                         } catch (Exception e) {
@@ -68,5 +98,4 @@ public class LibrosFragment extends Fragment {
 
         queue.add(peticion);
     }
-
 }
