@@ -1,27 +1,20 @@
 package com.m8_uf1.m13_biblioteca_ferreia_android.ui.libros;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
+import android.view.*;
+import android.widget.*;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.*;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.Volley;
+import com.android.volley.*;
+import com.android.volley.toolbox.*;
 import com.m8_uf1.m13_biblioteca_ferreia_android.R;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+import org.json.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class LibrosFragment extends Fragment {
 
@@ -30,11 +23,18 @@ public class LibrosFragment extends Fragment {
     private final List<Libro> listaLibros = new ArrayList<>();
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.fragment_libros, container, false);
 
         recyclerView = vista.findViewById(R.id.recycler_libros);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
         adapter = new LibrosAdapter(listaLibros);
         recyclerView.setAdapter(adapter);
 
@@ -43,8 +43,31 @@ public class LibrosFragment extends Fragment {
         return vista;
     }
 
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.inicio) {
+            Toast.makeText(getContext(), "Inicio seleccionado", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (item.getItemId() == R.id.perfil) {
+            Toast.makeText(getContext(), "Perfil seleccionado", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (item.getItemId() == R.id.historial) {
+            Toast.makeText(getContext(), "Historial seleccionado", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (item.getItemId() == R.id.ajustes) {
+            Toast.makeText(getContext(), "Ajustes seleccionado", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (item.getItemId() == R.id.cerrar_sesion) {
+            Toast.makeText(getContext(), "Cerrar sesión seleccionado", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
     private void cargarLibrosDesdeAPI() {
-        String url = "http://192.168.17.223:9090/public/libros";
+        String url = "http://192.168.18.44:9090/public/libros";
 
         RequestQueue queue = Volley.newRequestQueue(requireContext());
 
@@ -58,7 +81,7 @@ public class LibrosFragment extends Fragment {
                             String titulo = libroJson.getString("titulo");
                             String autor = libroJson.getString("autor");
                             String categoria = libroJson.getString("categoria");
-                            boolean estadoUso = libroJson.getBoolean("estadoUso"); 
+                            boolean estadoUso = libroJson.getBoolean("estadoUso");
 
                             listaLibros.add(new Libro(titulo, autor, categoria, estadoUso));
                         } catch (Exception e) {
@@ -75,5 +98,4 @@ public class LibrosFragment extends Fragment {
 
         queue.add(peticion);
     }
-
 }
