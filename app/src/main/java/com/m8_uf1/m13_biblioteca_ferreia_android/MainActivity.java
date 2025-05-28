@@ -6,6 +6,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+
+import com.m8_uf1.m13_biblioteca_ferreia_android.ui.historial.HistorialFragment;
 import com.m8_uf1.m13_biblioteca_ferreia_android.ui.libros.LibrosFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,6 +41,26 @@ public class MainActivity extends AppCompatActivity {
             finish();
             return true;
         }
+        if (item.getItemId() == R.id.historial) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.contenedor_fragmentos, new HistorialFragment())
+                    .addToBackStack(null)
+                    .commit();
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
+    @Override
+    public void onBackPressed() {
+        Fragment current = getSupportFragmentManager().findFragmentById(R.id.contenedor_fragmentos);
+        if (!(current instanceof LibrosFragment)) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.contenedor_fragmentos, new LibrosFragment())
+                    .commit();
+        } else {
+            super.onBackPressed();
+        }
+    }
+
 }
